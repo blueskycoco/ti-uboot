@@ -314,6 +314,9 @@ static unsigned short detect_daughter_board_profile(void)
 
 void enable_board_pin_mux(struct am335x_baseboard_id *header)
 {
+	#ifdef CONFIG_SBC8600B
+	return;
+	#endif
 	/* Do board-specific muxes. */
 	if (board_is_bone(header)) {
 		/* Beaglebone pinmux */
