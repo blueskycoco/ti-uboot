@@ -33,7 +33,7 @@
 #define CONFIG_BOARD_LATE_INIT
 
 /* Clock Defines */
-#define V_OSCK				24000000  /* Clock output from T2 */
+#define V_OSCK				26000000  /* Clock output from T2 */
 #define V_SCLK				(V_OSCK)
 
 /* Custom script for NOR */
@@ -445,8 +445,11 @@
 /* Network. */
 #define CONFIG_PHY_GIGE
 #define CONFIG_PHYLIB
+#ifdef CONFIG_SBC8600B
+#define CONFIG_PHY_ATHEROS
+#else
 #define CONFIG_PHY_SMSC
-
+#endif
 /*
  * NOR Size = 16 MiB
  * Number of Sectors/Blocks = 128
