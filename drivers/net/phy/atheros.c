@@ -33,7 +33,6 @@ static int ar8035_config(struct phy_device *phydev)
 
 	phydev->supported = phydev->drv->features;
 
-	printf("config ar8035\n");
 	return 0;
 }
 
